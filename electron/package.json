@@ -1,0 +1,21 @@
+{
+  "name": "sae-generator-v2",
+  "version": "1.0.0",
+  "description": "Générateur de PDF pour la SAE Institute Genève",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "copy": "copyfiles ../app/build ./builder",
+    "build": "cd ../app && npm run build && cd ../electron && rimraf ./builder && rimraf ./dist && mkdirp ./builder && cpy ../app/build/* ./builder && cpy ../app/build/static/ ./builder && electron-builder"
+  },
+  "author": "Julien Ramirez",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^26.2.4",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "cpy-cli": "^5.0.0",
+    "electron-is-dev": "^2.0.0"
+  }
+}
